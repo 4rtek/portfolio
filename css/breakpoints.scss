@@ -1,0 +1,35 @@
+// 📏 Breakpoint-Variablen (mit 360px Start)
+$breakpoints: (
+  xxs: 360px,
+  xs: 480px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1584px
+);
+
+// 🔧 Mixin für Min-Width
+@mixin respond($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "⚠️ Breakpoint #{$breakpoint} ist nicht definiert.";
+  }
+}
+
+// (Optional) 🔧 Mixin für Max-Width
+@mixin respond-max($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "⚠️ Breakpoint #{$breakpoint} ist nicht definiert.";
+  }
+}
