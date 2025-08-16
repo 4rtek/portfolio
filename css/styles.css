@@ -919,27 +919,30 @@ html, body {
     align-items: center;
     position: relative;
   }
-  .lp-col .landing-page-text .tp {
+  .lp-col .landing-page-text .txt-container.second {
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container .tp {
     position: relative;
     left: 119px;
     padding-top: 136px;
   }
-  .lp-col .landing-page-text .tp:after {
+  .lp-col .landing-page-text .txt-container .tp:after {
     content: "";
     position: absolute;
   }
-  .lp-col .landing-page-text .gd {
+  .lp-col .landing-page-text .txt-container .gd {
     position: relative;
     right: 35px;
     padding: 30px 0;
   }
-  .lp-col .landing-page-text .po {
+  .lp-col .landing-page-text .txt-container .po {
     position: relative;
     left: 168px;
   }
-  .lp-col .landing-page-text .yr {
+  .lp-col .landing-page-text .txt-container .yr {
     position: absolute;
-    left: 0;
+    left: -200px;
     bottom: -174px;
     writing-mode: sideways-lr;
   }
@@ -984,16 +987,22 @@ html, body {
   .lp-col .landing-page-text:before {
     bottom: 103px;
   }
-  .lp-col .landing-page-text .tp {
+  .lp-col .landing-page-text .txt-container .tp {
     padding-top: 123px;
     left: 236px;
   }
-  .lp-col .landing-page-text .gd {
+  .lp-col .landing-page-text .txt-container .gd {
     right: 44px;
   }
-  .lp-col .landing-page-text .yr {
+  .lp-col .landing-page-text .txt-container .po {
+    left: 190px;
+  }
+  .lp-col .landing-page-text .txt-container .yr {
     bottom: -200px;
-    left: 3%;
+    left: -230px;
+  }
+  .lp-col .my-work {
+    left: 225px;
   }
 }
 @media (min-width: 1584px) {
@@ -1007,19 +1016,19 @@ html, body {
   .lp-col .landing-page-text:before {
     bottom: 126px;
   }
-  .lp-col .landing-page-text .tp {
+  .lp-col .landing-page-text .txt-container .tp {
     padding-top: 103px;
     left: 241px;
   }
-  .lp-col .landing-page-text .po {
+  .lp-col .landing-page-text .txt-container .po {
     left: 318px;
   }
-  .lp-col .landing-page-text .gd {
+  .lp-col .landing-page-text .txt-container .gd {
     right: 18px;
   }
-  .lp-col .landing-page-text .yr {
+  .lp-col .landing-page-text .txt-container .yr {
     bottom: -244px;
-    left: 106px;
+    left: -250px;
   }
   .lp-col .my-work {
     left: 260px;
