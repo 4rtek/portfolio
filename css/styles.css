@@ -571,175 +571,495 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.lp-col {
-  overflow: hidden;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 50px;
+html, body {
+  height: 100%;
+  overscroll-behavior: none; /* verhindert Rubber-Banding/Scroll-Chaining */
 }
-.lp-col .landing-page-text {
-  display: flex;
+
+@media (max-width: 1023px) {
+  .lp-col {
+    overflow-x: clip;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  .lp-col .landing-page-text {
+    display: flex;
+  }
+  .lp-col .landing-page-text .txt-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% + 36px);
+    background: #E4D2FF;
+    bottom: 198px;
+    left: -18px;
+  }
+  .lp-col .landing-page-text .txt-container .letter {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  .lp-col .landing-page-text .txt-container .tp {
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    padding-left: 20%;
+    padding-bottom: 57px;
+    text-align: right;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters {
+    padding-bottom: 163px;
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters::after {
+    content: "";
+    position: absolute;
+    bottom: 162px;
+    width: 500px;
+    height: 1px;
+    background: #E4D2FF;
+    left: 9px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2 {
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2::after {
+    content: "";
+    position: absolute;
+    bottom: 214px;
+    width: 214px;
+    height: 1px;
+    background: #E4D2FF;
+    right: -7px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2::before {
+    content: "";
+    position: absolute;
+    top: 122px;
+    width: 1px;
+    height: 310px;
+    background: #E4D2FF;
+    right: 42px;
+  }
+  .lp-col .landing-page-text .txt-container .gd {
+    text-align: right;
+    padding-top: 98px;
+    margin-right: 4%;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters {
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters::after {
+    content: "";
+    position: absolute;
+    bottom: 45px;
+    width: 400px;
+    height: 1px;
+    background: #E4D2FF;
+    right: 1px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters-2 {
+    position: relative;
+    right: -2px;
+    padding-bottom: 60px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters-2::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 1px;
+    height: 380px;
+    background: #E4D2FF;
+    right: 3px;
+  }
+  .lp-col .landing-page-text .txt-container.second {
+    width: 20%;
+  }
+  .lp-col .landing-page-text .txt-container.second .po {
+    writing-mode: vertical-rl;
+    padding-top: 268px;
+  }
+  .lp-col .landing-page-text .txt-container.second .po .letters {
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container.second .po .letters::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    width: 1px;
+    height: 606px;
+    background: #E4D2FF;
+    right: 42px;
+  }
+  .lp-col .landing-page-text .txt-container.second .yr {
+    margin-top: 78px;
+    padding-bottom: 200px;
+    position: relative;
+  }
+  .lp-col .landing-page-text .txt-container.second .yr .letters {
+    position: absolute;
+    top: -3px;
+    left: -175px;
+    width: 140px;
+  }
+  .lp-col .my-work {
+    width: 20%;
+    margin-left: auto;
+    position: relative;
+    padding-bottom: 140px;
+  }
+  .lp-col .my-work .link-container {
+    text-align: right;
+    position: absolute;
+    right: 47px;
+    width: 263px;
+    top: 0;
+  }
+  .lp-col .my-work .link-container .arrow {
+    position: absolute;
+    top: -240px;
+    left: -10px;
+    height: 210px;
+    transition: 0.3s ease-in-out;
+  }
+  .lp-col .my-work .link-container:hover .arrow {
+    transform: rotate(20deg);
+  }
+  .lp-col .my-work .link-container .work-link {
+    position: relative;
+    text-decoration: none;
+  }
+  .lp-col .my-work .link-container .work-link:after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 10px);
+    left: -5px;
+    height: 20px;
+    bottom: 8px;
+    background: #B17AFD;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  .lp-col .my-work .link-container .work-link:hover:after {
+    height: 6px;
+  }
 }
-.lp-col .landing-page-text .txt-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  position: relative;
+@media (max-width: 1023px) and (min-width: 480px) {
+  .lp-col {
+    font-size: 70px;
+    line-height: 70px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2::before {
+    height: 370px;
+    right: 60px;
+    top: 105px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2::after {
+    bottom: 299px;
+    width: 400px;
+    right: -11px;
+  }
+  .lp-col .landing-page-text .txt-container .gd {
+    margin-right: 2%;
+    padding-top: 186px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters:after {
+    bottom: 63.5px;
+    right: 2px;
+    width: 700px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters-2:after {
+    right: 4px;
+    bottom: -8px;
+    height: 500px;
+  }
+  .lp-col .landing-page-text .txt-container.second .po {
+    padding-top: 353px;
+  }
+  .lp-col .landing-page-text .txt-container.second .po .letters::after {
+    right: 60px;
+    height: 800px;
+  }
+  .lp-col .landing-page-text .txt-container.second .yr .letters {
+    width: 190px;
+    top: -4px;
+    left: -246px;
+  }
+  .lp-col .my-work {
+    padding-bottom: 180px;
+  }
+  .lp-col .my-work .link-container {
+    width: 367px;
+    right: 65px;
+    top: 30px;
+  }
+  .lp-col .my-work .link-container .work-link:after {
+    height: 32px;
+  }
+  .lp-col .my-work .link-container .work-link:hover:after {
+    height: 10px;
+  }
 }
-.lp-col .landing-page-text .txt-container:after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  width: 100vw;
-  background: #E4D2FF;
-  bottom: 198px;
-  left: -18px;
+@media (max-width: 1023px) and (min-width: 600px) {
+  .lp-col .landing-page-text .txt-container {
+    width: 65%;
+  }
+  .lp-col .landing-page-text .txt-container:after {
+    width: 170%;
+  }
+  .lp-col .landing-page-text .txt-container.second {
+    width: 35%;
+    padding-right: 86px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2::after {
+    width: 800px;
+  }
+  .lp-col .my-work .link-container {
+    right: 151px;
+  }
+  .lp-col .my-work .link-container .arrow {
+    top: -300px;
+    left: -50px;
+    height: 280px;
+  }
 }
-.lp-col .landing-page-text .txt-container .letter {
-  display: inline-block;
-  transition: transform 0.5s ease;
-  cursor: pointer;
+@media (max-width: 1023px) and (min-width: 768px) {
+  .lp-col {
+    font-size: 90px;
+    line-height: 90px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters:after {
+    left: 15px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2 {
+    top: 30px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2:before {
+    height: 416px;
+    right: 76px;
+    top: 91px;
+  }
+  .lp-col .landing-page-text .txt-container .tp .letters-2:after {
+    bottom: 384px;
+    width: 650px;
+    right: -14px;
+  }
+  .lp-col .landing-page-text .txt-container .gd {
+    padding-top: 160px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters::after {
+    bottom: 81.5px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters-2 {
+    right: -4px;
+  }
+  .lp-col .landing-page-text .txt-container .gd .letters-2:after {
+    right: 6px;
+    bottom: -97px;
+    height: 619px;
+  }
+  .lp-col .landing-page-text .txt-container.second .po {
+    padding-top: 405px;
+  }
+  .lp-col .landing-page-text .txt-container.second .po .letters::after {
+    right: 76px;
+    top: 6px;
+    height: 920px;
+  }
+  .lp-col .landing-page-text .txt-container.second .yr .letters {
+    width: 260px;
+    top: -6px;
+    left: -315px;
+  }
+  .lp-col .my-work .link-container {
+    width: 500px;
+    top: 9px;
+    right: 168px;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp {
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
-  padding-left: 20%;
-  padding-bottom: 57px;
-  text-align: right;
+@media (min-width: 1024px) {
+  .lp-col {
+    overflow-x: clip;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 100px;
+    position: relative;
+  }
+  .lp-col:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% + 26px);
+    height: 100vh;
+    width: 1px;
+    background-color: #E4D2FF;
+    z-index: -2;
+  }
+  .lp-col .letters, .lp-col .letters-2 {
+    display: inline;
+  }
+  .lp-col .letter {
+    display: inline-block;
+    transition: transform 0.5s ease;
+  }
+  .lp-col .landing-page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .lp-col .landing-page-text .tp {
+    position: relative;
+    left: 119px;
+    padding-top: 136px;
+  }
+  .lp-col .landing-page-text .tp:after {
+    content: "";
+    position: absolute;
+  }
+  .lp-col .landing-page-text .gd {
+    position: relative;
+    right: 35px;
+    padding: 30px 0;
+  }
+  .lp-col .landing-page-text .po {
+    position: relative;
+    left: 168px;
+  }
+  .lp-col .landing-page-text .yr {
+    position: absolute;
+    left: 0;
+    bottom: -174px;
+    writing-mode: sideways-lr;
+  }
+  .lp-col .my-work {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 199px;
+    padding: 100px 0 75px;
+  }
+  .lp-col .my-work img {
+    display: none;
+  }
+  .lp-col .my-work .link-container .work-link {
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .lp-col .my-work .link-container .work-link:after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 40px);
+    left: -20px;
+    height: 40px;
+    bottom: 17px;
+    background: #B17AFD;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  .lp-col .my-work .link-container .work-link:hover {
+    color: #B17AFD;
+  }
+  .lp-col .my-work .link-container .work-link:hover:after {
+    height: 6px;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp .letters {
-  padding-bottom: 162px;
-  position: relative;
+@media (min-width: 1280px) {
+  .lp-col {
+    font-size: 115px;
+    line-height: 115px;
+  }
+  .lp-col .landing-page-text:before {
+    bottom: 103px;
+  }
+  .lp-col .landing-page-text .tp {
+    padding-top: 123px;
+    left: 236px;
+  }
+  .lp-col .landing-page-text .gd {
+    right: 44px;
+  }
+  .lp-col .landing-page-text .yr {
+    bottom: -200px;
+    left: 3%;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp .letters::after {
-  content: "";
-  position: absolute;
-  bottom: 162px;
-  width: 400px;
-  height: 1px;
-  background: #E4D2FF;
-  left: 9px;
+@media (min-width: 1584px) {
+  .lp-col {
+    font-size: 140px;
+    line-height: 140px;
+  }
+  .lp-col:after {
+    left: calc(50% - 96px);
+  }
+  .lp-col .landing-page-text:before {
+    bottom: 126px;
+  }
+  .lp-col .landing-page-text .tp {
+    padding-top: 103px;
+    left: 241px;
+  }
+  .lp-col .landing-page-text .po {
+    left: 318px;
+  }
+  .lp-col .landing-page-text .gd {
+    right: 18px;
+  }
+  .lp-col .landing-page-text .yr {
+    bottom: -244px;
+    left: 106px;
+  }
+  .lp-col .my-work {
+    left: 260px;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp .letters-2 {
-  position: relative;
+
+@media (min-width: 1024px) {
+  .landing-page-wrapper {
+    position: relative;
+  }
+  .landing-page-wrapper:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #E4D2FF;
+    top: 220px;
+    z-index: -1;
+  }
+  .landing-page-wrapper:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #E4D2FF;
+    bottom: 365px;
+    z-index: -1;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp .letters-2::after {
-  content: "";
-  position: absolute;
-  bottom: 214px;
-  width: 214px;
-  height: 1px;
-  background: #E4D2FF;
-  right: -7px;
+@media (min-width: 1280px) {
+  .landing-page-wrapper:before {
+    bottom: 393px;
+  }
 }
-.lp-col .landing-page-text .txt-container .tp .letters-2::before {
-  content: "";
-  position: absolute;
-  top: 122px;
-  width: 1px;
-  height: 310px;
-  background: #E4D2FF;
-  right: 42px;
-}
-.lp-col .landing-page-text .txt-container .gd {
-  text-align: right;
-  padding-top: 98px;
-  margin-right: 4%;
-}
-.lp-col .landing-page-text .txt-container .gd .letters {
-  position: relative;
-}
-.lp-col .landing-page-text .txt-container .gd .letters::after {
-  content: "";
-  position: absolute;
-  bottom: 45px;
-  width: 400px;
-  height: 1px;
-  background: #E4D2FF;
-  right: 1px;
-}
-.lp-col .landing-page-text .txt-container .gd .letters-2 {
-  position: relative;
-  right: -2px;
-  padding-bottom: 60px;
-}
-.lp-col .landing-page-text .txt-container .gd .letters-2::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  width: 1px;
-  height: 380px;
-  background: #E4D2FF;
-  right: 3px;
-}
-.lp-col .landing-page-text .txt-container.second {
-  width: 20%;
-}
-.lp-col .landing-page-text .txt-container.second .po {
-  writing-mode: vertical-rl;
-  padding-top: 268px;
-}
-.lp-col .landing-page-text .txt-container.second .po .letters {
-  position: relative;
-}
-.lp-col .landing-page-text .txt-container.second .po .letters::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  width: 1px;
-  height: 606px;
-  background: #E4D2FF;
-  right: 42px;
-}
-.lp-col .landing-page-text .txt-container.second .yr {
-  margin-top: 78px;
-  padding-bottom: 200px;
-  position: relative;
-}
-.lp-col .landing-page-text .txt-container.second .yr .letters {
-  position: absolute;
-  top: -3px;
-  left: -175px;
-  width: 140px;
-}
-.lp-col .my-work {
-  width: 20%;
-  margin-left: auto;
-  position: relative;
-  padding-bottom: 100px;
-}
-.lp-col .my-work .link-container {
-  text-align: right;
-  position: absolute;
-  right: 47px;
-  width: 263px;
-  top: 0;
-}
-.lp-col .my-work .link-container .arrow {
-  position: absolute;
-  top: -240px;
-  left: -10px;
-  height: 210px;
-  transition: 0.3s ease-in-out;
-}
-.lp-col .my-work .link-container:hover .arrow {
-  transform: rotate(20deg);
-}
-.lp-col .my-work .link-container .work-link {
-  position: relative;
-  text-decoration: none;
-}
-.lp-col .my-work .link-container .work-link:after {
-  position: absolute;
-  content: "";
-  width: calc(100% + 10px);
-  left: -5px;
-  height: 20px;
-  bottom: 8px;
-  background: #B17AFD;
-  z-index: -1;
+@media (min-width: 1584px) {
+  .landing-page-wrapper:before {
+    bottom: 441px;
+  }
 }
 
 *,
